@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>ADD PRODUCT</h1>
+
+<div th:if="${successMessage}" class="alert alert-success" th:text="${successMessage}"></div>
+<div th:if="${errorMessage}" class="alert alert-danger" th:text="${errorMessage}"></div>
+
+
+<form th:object="${product}" th:action="@{/api/product/add}" method="post">
+    <div>
+        <label for="ProductID">商品編號:</label>
+        <input type="text" id="ProductID" th:field="*{ProductID}" />
+    </div>
+    <div>
+        <label for="ProductName">商品名稱:</label>
+        <input type="text" id="ProductName" th:field="*{ProductName}" />
+    </div>
+    <div>
+        <label for="Price">售價:</label>
+        <input type="text" id="Price" th:field="*{Price}" />
+    </div>
+    <div>
+        <label for="Quantity">庫存:</label>
+        <input type="text" id="Quantity" th:field="*{Quantity}" />
+    </div>
+
+    <div>
+        <button type="submit" >新增</button>
+    </div>
+</form>
+
+
+
+</body>
+</html>
