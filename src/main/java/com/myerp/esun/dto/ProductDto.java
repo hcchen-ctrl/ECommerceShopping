@@ -7,12 +7,13 @@ import jakarta.validation.constraints.Size;
 
 
 public class ProductDto {
+
     @NotBlank(message = "ID不能為空")
     @Size(min = 3, max = 5, message = "長度必須在 3-5 個字元之間")
     private String productId;
 
     @NotBlank(message = "productName不能為空")
-    @Size(min = 3, max = 50, message = "長度必須在 3-50個字元之間")
+    @Size(min = 3, max = 50, message = "長度必須在 3-50 個字元之間")
     private String productName;
 
     @NotNull(message = "價格不能為空")

@@ -13,8 +13,8 @@ public class WebConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**") // 所有 API 都允許
-                        .allowedOrigins("http://localhost:5173", "http://localhost:5174") // Vite 的兩個常見 port
+                registry.addMapping("/**") //連接API
+                        .allowedOrigins("http://localhost:5173")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);

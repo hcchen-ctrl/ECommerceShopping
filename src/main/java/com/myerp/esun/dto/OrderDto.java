@@ -2,12 +2,16 @@ package com.myerp.esun.dto;
 
 
 public class OrderDto {
-    private String productId;
-    private Integer quantity;
-    private String orderId;
-    private Integer standPrice;
-    private Integer itemPrice;
 
+    private String productId;
+
+    private Integer quantity;
+
+    private String orderId;
+
+    private Integer standPrice;
+
+    private Integer itemPrice;
 
     public String getProductId() {
         return productId;

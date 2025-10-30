@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "product")
 public class ProductEntity {
+
     @Id
     @Column(name = "productid",length =20)
     private String productId;
