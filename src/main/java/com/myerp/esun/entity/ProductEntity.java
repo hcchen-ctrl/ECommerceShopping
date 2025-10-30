@@ -6,18 +6,24 @@ import jakarta.persistence.*;
 @Table(name = "product")
 public class ProductEntity {
     @Id
-    @Column(name = "productID",length =20)
-    private String productID;
-    private String productName;
-    private String price;
-    private String quantity;
+    @Column(name = "productid",length =20)
+    private String productId;
 
-    public String getProductID() {
-        return productID;
+    @Column(name = "product_name")
+    private String productName;
+
+    @Column(name = "price")
+    private Integer price;
+
+    @Column(name = "quantity")
+    private Integer quantity;
+
+    public String getProductId() {
+        return productId;
     }
 
-    public void setProductID(String productID) {
-        this.productID = productID;
+    public void setProductId(String productId) {
+        this.productId = productId;
     }
 
     public String getProductName() {
@@ -28,19 +34,19 @@ public class ProductEntity {
         this.productName = productName;
     }
 
-    public String getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 
-    public String getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 }

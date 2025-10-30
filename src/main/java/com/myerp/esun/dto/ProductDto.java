@@ -1,32 +1,34 @@
 package com.myerp.esun.dto;
 
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 
 public class ProductDto {
     @NotBlank(message = "ID不能為空")
     @Size(min = 3, max = 5, message = "長度必須在 3-5 個字元之間")
-    private String productID;
+    private String productId;
 
     @NotBlank(message = "productName不能為空")
     @Size(min = 3, max = 50, message = "長度必須在 3-50個字元之間")
     private String productName;
 
-    @NotBlank(message = "price不能為空")
-    @Size(min = 3, max = 50, message = "長度必須在 3-50個字元之間")
-    private String price;
+    @NotNull(message = "價格不能為空")
+    @Min(value = 0, message = "價格不能小於 0")
+    private Integer price;
 
-    @NotBlank(message = "quantity不能為空")
-    @Size(min = 3, max = 50, message = "長度必須在 3-50個字元之間")
-    private String quantity;
+    @NotNull(message = "庫存量不能為空")
+    @Min(value = 0, message = "庫存量不能小於 0")
+    private Integer quantity;
 
-    public String getProductID() {
-        return productID;
+    public String getProductId() {
+        return productId;
     }
 
-    public void setProductID(String productID) {
-        this.productID = productID;
+    public void setProductId(String productId) {
+        this.productId = productId;
     }
 
     public String getProductName() {
@@ -37,19 +39,19 @@ public class ProductDto {
         this.productName = productName;
     }
 
-    public String getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 
-    public String getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 }

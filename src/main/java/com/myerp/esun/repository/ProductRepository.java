@@ -9,11 +9,9 @@ import java.util.Optional;
 @Repository
 public interface ProductRepository extends JpaRepository<ProductEntity,Long> {
 
-    //根據ProductID查詢商品
-    Optional<ProductEntity> findByProductID(String productID);
+    Optional<ProductEntity> findByProductId(String productId);
 
     //檢查編號是否存在
-    boolean existsByProductID(String productID);
-
+    boolean existsByProductId(String productId);
 
 }
